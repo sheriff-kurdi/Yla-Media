@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cHUprLNHlPAxxvcTi+FhpW+alFC5LtwGLr4pYEurvrvxhkxHagPntEaXn52hUpSLSPaOBvbOu3jEVZx7QCWmiw==",
+  "dgSpecHash": "SdqqmBR3hKngJ8Wj7FykxBCNjwojQDpDeGmf3E5CQGdB1MxkVmiO3sn4tPgTwH7gZ/KJkOFhB3Fg11WRZGlHbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\sheri\\source\\repos\\YallaMedia\\YallaMedia\\YallaMedia.csproj",
   "expectedPackageFiles": [
@@ -61,7 +61,6 @@
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\3.1.3\\microsoft.visualstudio.web.codegeneration.templating.3.1.3.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\3.1.3\\microsoft.visualstudio.web.codegeneration.utils.3.1.3.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.3\\microsoft.visualstudio.web.codegenerators.mvc.3.1.3.nupkg.sha512",
-    "C:\\Users\\sheri\\.nuget\\packages\\microsoft.web.deployment\\3.6.0\\microsoft.web.deployment.3.6.0.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
@@ -207,16 +206,5 @@
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.3\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.3.nupkg.sha512",
     "C:\\Users\\sheri\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.3\\microsoft.aspnetcore.app.runtime.win-x86.3.1.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Web.Deployment 3.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Web.Deployment",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

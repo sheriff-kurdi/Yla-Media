@@ -26,13 +26,15 @@ namespace YallaMedia.Controllers
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddEditor()
         {
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddEditor(RegisterViewModel userModel)
         {

@@ -504,6 +504,3 @@ C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-
 C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\System.Security.Permissions.dll
 C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\System.Windows.Extensions.dll
 C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\aspnetcorev2_inprocess.dll
-C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\Microsoft.Web.Delegation.dll
-C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\Microsoft.Web.Deployment.Tracing.dll
-C:\Users\sheri\source\repos\YallaMedia\YallaMedia\bin\Release\netcoreapp3.1\win-x86\Microsoft.Web.Deployment.dll

@@ -18,14 +18,16 @@ namespace YallaMedia.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
+            this.roleManager = roleManager;
             _signInManager = signInManager;
             _logger = logger;
         }
@@ -56,19 +58,55 @@ namespace YallaMedia.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            if (!string.IsNullOrEmpty(ErrorMessage))
+
+            //it's not the good way to seed user i know :D
+            // even pass have to be in user secrets but just for testing
+            var user = new IdentityUser { UserName = "sheriffelwany@gmail.com", Email = "Sheriff@gmail.com" };
+            var result = await _userManager.CreateAsync(user,  "Test.123456");
+
+
+            // 1 : Copy Data from RegisterViewModel to IdentityUser
+
+            // 2 : store user in DB :UserManager class
+            //3 : Process ? Successed or Fail
+            if (result.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
+
+                IdentityRole role = new IdentityRole()
+                {
+                    Name = "Admin"
+                };
+
+                // if role did not exist create it
+                if (!await roleManager.RoleExistsAsync("Admin"))
+                {
+                    IdentityResult roleResult = await roleManager.CreateAsync(role);
+                    if (roleResult.Succeeded)
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+
+                }
+                //of role exists
+                // add to role
+                await _userManager.AddToRoleAsync(user, "Admin");
+
+                await _signInManager.SignInAsync(user, isPersistent: false);
+
+                if (!string.IsNullOrEmpty(ErrorMessage))
+                {
+                    ModelState.AddModelError(string.Empty, ErrorMessage);
+                }
+
+                returnUrl = returnUrl ?? Url.Content("~/");
+
+                // Clear the existing external cookie to ensure a clean login process
+                await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+                ReturnUrl = returnUrl;
             }
-
-            returnUrl = returnUrl ?? Url.Content("~/");
-
-            // Clear the existing external cookie to ensure a clean login process
-            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
-            ReturnUrl = returnUrl;
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

@@ -54,23 +54,35 @@
                         </li>
 
 
-                     
+
 
 
 
                         @if (signManager.IsSignedIn(User))
                         {
-                           var loggedUser =  await userManager.GetUserAsync(User);
+                            var loggedUser = await userManager.GetUserAsync(User);
 
                             if (await userManager.IsInRoleAsync(loggedUser, "Editor"))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link " asp-area="" asp-controller="Account" asp-action="AddEditor"> AddEditor </a>
-                                </li>
+
 
                                 <li class="nav-item">
                                     <a class="nav-link " asp-area="" asp-controller="Blogs" asp-action="Index">Manage Blogs</a>
                                 </li>
+                            }
+
+
+                            if (await userManager.IsInRoleAsync(loggedUser, "Admin"))
+                            {
+
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-area="" asp-controller="Blogs" asp-action="Index">Manage Blogs</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-area="" asp-controller="Account" asp-action="AddEditor"> AddEditor </a>
+                                </li>
+
                             }
                         }
 
