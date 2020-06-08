@@ -1,4 +1,8 @@
-﻿@model IEnumerable<YallaMedia.Models.Blog>
+﻿@inject SignInManager<IdentityUser> signManager
+@inject UserManager<IdentityUser> userManager
+
+
+@model IEnumerable<YallaMedia.Models.Blog>
 
 @{
     ViewData["Title"] = "ListBlogs";
@@ -6,9 +10,32 @@
 
 <h1>ListBlogs</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+
+@if (signManager.IsSignedIn(User))
+{
+    var loggedUser = await userManager.GetUserAsync(User);
+
+    if (await userManager.IsInRoleAsync(loggedUser, "Editor"))
+    {
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    }
+
+
+    if (await userManager.IsInRoleAsync(loggedUser, "Admin"))
+    {
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+
+    }
+}
+
+
 
 <div class="container">
 
@@ -34,9 +61,9 @@
                     </div>
 
                 </div>
-                </a>
-                }
-        </div>
+            </a>
+        }
+    </div>
 </div>
 
 <br />
