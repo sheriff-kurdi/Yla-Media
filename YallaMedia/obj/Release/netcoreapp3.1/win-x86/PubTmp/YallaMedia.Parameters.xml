@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="YallaMedia" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\sheri\\source\\repos\\YallaMedia\\YallaMedia\\obj\\Release\\netcoreapp3\.1\\win-x86\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="YallaMedia.Data.ApplicationDbContext" description="" value="Data Source=tcp:yallamediadbserver.database.windows.net,1433;Initial Catalog=YallaMedia_db;User Id=sheriffkurdi@yallamediadbserver;Password=tifa.011516" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\sheri\\source\\repos\\YallaMedia\\YallaMedia\\obj\\Release\\netcoreapp3\.1\\win-x86\\PubTmp\\EFSQLScripts\\YallaMedia\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>

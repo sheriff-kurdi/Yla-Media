@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqyeXLtVdeUSK+QTGq9Rz5QAAAAACAAAAAAAQZgAAAAEAACAAAADXVFpWCELNCKi0zjYlOw0vw+sCoLHJ6cTFQP19oEfkFQAAAAAOgAAAAAIAACAAAACtdQg4fqmW9VUqaIOLohVclqorFio/aTn79NQMqbUH0YAAAABBWZdqX0W1ChP9cejV/04K1xRGR25Mh3KKqAiXAdeEk6uaagDkfMIyWgciwVsWozhH8Qx/0kS19a1YgtG89I8caHlbx4RZNloP4wnJ5YGPafJ8tKbDfLpN5rP3teX/vaeUgIPI1iPrUr222Is91Y7htVjPkS7COZ+MBmtfIDQqjUAAAADEzBXlS1n6y2imRYYY2RiSWfg7t0rHYh9tE6PO9fWPNkKPXIRo6YDbKwa/m3UNXdGdCfSFj28+W4uO40AftvEK</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:yallamediadbserver.database.windows.net,1433%3bInitial Catalog=YallaMedia_db%3bUser Id=sheriffkurdi%40yallamediadbserver%3bPassword=tifa.011516</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="YallaMedia.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:yallamediadbserver.database.windows.net,1433%3bInitial Catalog=YallaMedia_db%3bUser Id=sheriffkurdi%40yallamediadbserver%3bPassword=tifa.011516</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
